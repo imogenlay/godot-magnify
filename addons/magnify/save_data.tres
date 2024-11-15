@@ -8,4 +8,4 @@ current_zoom_in_key = "F10"
 current_zoom_out_key = "F9"
 current_ratio = "7 : 5"
 current_size = 0.6
-keys_enabled = true
+keys_enabled = false
