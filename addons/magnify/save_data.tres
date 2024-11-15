@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MagnifySaveData" load_steps=2 format=3 uid="uid://dks2nuf4q57j1"]
+
+[ext_resource type="Script" path="res://addons/magnify/magnify_save_data.gd" id="1_asekr"]
+
+[resource]
+script = ExtResource("1_asekr")
+current_zoom_in_key = "F10"
+current_zoom_out_key = "F9"
+current_ratio = "7 : 5"
+current_size = 0.6
+keys_enabled = true

@@ -1,0 +1,230 @@
+[gd_scene load_steps=7 format=3 uid="uid://cb0gu11jpk76o"]
+
+[ext_resource type="Script" path="res://addons/magnify/magnifying_glass.gd" id="1_5e2rd"]
+[ext_resource type="Theme" uid="uid://2kb0ruv8bd7l" path="res://addons/magnify/theme/magnify.theme" id="1_d26ln"]
+[ext_resource type="Texture2D" uid="uid://bd4g1d7v1p8j1" path="res://addons/magnify/theme/zoom_out.png" id="2_1sq84"]
+[ext_resource type="Material" uid="uid://c80ueaftussvi" path="res://addons/magnify/magnifying_glass.material" id="2_enbnm"]
+[ext_resource type="Texture2D" uid="uid://dbdhhkb4mybm2" path="res://addons/magnify/theme/zoom_in.png" id="3_n356w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cy1aj"]
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[node name="Magnify" type="ColorRect"]
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -108.0
+offset_top = -96.0
+offset_right = 108.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.334306, 0.305511, 0.832031, 1)
+
+[node name="Menu" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_d26ln")
+theme_override_constants/separation = 20
+
+[node name="Control" type="Control" parent="Menu"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Toggle" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+mouse_default_cursor_shape = 2
+text = "Toggle"
+
+[node name="Separator1" type="ColorRect" parent="Menu"]
+custom_minimum_size = Vector2(600, 2)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(1, 1, 1, 0.494118)
+
+[node name="Size" type="VBoxContainer" parent="Menu"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 0
+
+[node name="SizeLabel" type="Label" parent="Menu/Size"]
+layout_mode = 2
+text = "Magnify Size:"
+
+[node name="SizeSlider" type="HSlider" parent="Menu/Size"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+min_value = 0.1
+max_value = 1.0
+step = 0.1
+value = 0.4
+tick_count = 10
+ticks_on_borders = true
+
+[node name="Control" type="Control" parent="Menu/Size"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Separator2" type="ColorRect" parent="Menu"]
+custom_minimum_size = Vector2(600, 2)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(1, 1, 1, 0.494118)
+
+[node name="Ratio" type="VBoxContainer" parent="Menu"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 0
+
+[node name="RatioLabel" type="Label" parent="Menu/Ratio"]
+layout_mode = 2
+text = "Magnify Ratio:"
+
+[node name="RatioOptions" type="OptionButton" parent="Menu/Ratio"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+focus_mode = 0
+
+[node name="Separator3" type="ColorRect" parent="Menu"]
+custom_minimum_size = Vector2(600, 2)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(1, 1, 1, 0.494118)
+
+[node name="Zoom" type="HBoxContainer" parent="Menu"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 0
+
+[node name="ZoomOutButton" type="Button" parent="Menu/Zoom"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+icon = ExtResource("2_1sq84")
+icon_alignment = 1
+
+[node name="ZoomLabel" type="Label" parent="Menu/Zoom"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+text = "Zoom: x2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ZoomInButton" type="Button" parent="Menu/Zoom"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+icon = ExtResource("3_n356w")
+icon_alignment = 1
+
+[node name="Separator4" type="ColorRect" parent="Menu"]
+custom_minimum_size = Vector2(600, 2)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(1, 1, 1, 0.494118)
+
+[node name="EnableKeys" type="CheckBox" parent="Menu"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+mouse_default_cursor_shape = 2
+text = "Enable Keyboard Controls"
+flat = true
+
+[node name="KeyButtons" type="VBoxContainer" parent="Menu"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 0
+
+[node name="ZoomOutKeyLabel" type="Label" parent="Menu/KeyButtons"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Zoom Out Key:"
+vertical_alignment = 1
+
+[node name="ZoomOutKey" type="OptionButton" parent="Menu/KeyButtons"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+fit_to_longest_item = false
+
+[node name="ZoomInKeyLabel" type="Label" parent="Menu/KeyButtons"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Zoom In Key:"
+vertical_alignment = 1
+
+[node name="ZoomInKey" type="OptionButton" parent="Menu/KeyButtons"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+fit_to_longest_item = false
+
+[node name="Deparent" type="Node" parent="."]
+
+[node name="Glass" type="ColorRect" parent="Deparent" node_paths=PackedStringArray("glass_size_slider", "toggle_button", "zoom_in_button", "zoom_out_button", "zoom_label", "enable_keys", "zoom_in_key", "zoom_out_key", "key_buttons", "ratio_options")]
+top_level = true
+z_index = 999
+custom_minimum_size = Vector2(40, 40)
+offset_left = 199.0
+offset_top = 147.0
+offset_right = 239.0
+offset_bottom = 187.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0.0313726)
+script = ExtResource("1_5e2rd")
+magnify_material = ExtResource("2_enbnm")
+glass_size_slider = NodePath("../../Menu/Size/SizeSlider")
+toggle_button = NodePath("../../Menu/Toggle")
+zoom_in_button = NodePath("../../Menu/Zoom/ZoomInButton")
+zoom_out_button = NodePath("../../Menu/Zoom/ZoomOutButton")
+zoom_label = NodePath("../../Menu/Zoom/ZoomLabel")
+enable_keys = NodePath("../../Menu/EnableKeys")
+zoom_in_key = NodePath("../../Menu/KeyButtons/ZoomInKey")
+zoom_out_key = NodePath("../../Menu/KeyButtons/ZoomOutKey")
+key_buttons = NodePath("../../Menu/KeyButtons")
+ratio_options = NodePath("../../Menu/Ratio/RatioOptions")
+
+[node name="Border" type="Panel" parent="Deparent/Glass"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cy1aj")
