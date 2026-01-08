@@ -42,7 +42,7 @@ grow_vertical = 2
 theme = ExtResource("1_d26ln")
 theme_override_constants/separation = 20
 
-[node name="Control" type="Control" parent="Menu"]
+[node name="Gap" type="Control" parent="Menu"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -83,7 +83,7 @@ value = 0.4
 tick_count = 10
 ticks_on_borders = true
 
-[node name="Control" type="Control" parent="Menu/Size"]
+[node name="Gap" type="Control" parent="Menu/Size"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
